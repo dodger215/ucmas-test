@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation - Update User Score</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>API Documentation: Update User Score</h1>
+            <p>This API allows you to update the user's score for a specific level and stage.</p>
+        </header>
+        
+        <section class="api-endpoint">
+            <h2>API Endpoint</h2>
+            <p><strong>URL:</strong> <a href="http://localhost/project/math_test/update/beginning_level/add/" target="_blank">http://localhost/project/math_test/update/beginning_level/add/</a></p>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>Content-Type:</strong> application/json</p>
+        </section>
+
+        <section class="request">
+            <h2>Request</h2>
+            <p>The API expects a JSON body containing the user's ID, level, stage, and score.</p>
+            <pre>
+{
+    "id": 123,
+    "level": "level 1",
+    "stage": "Stage 1",
+    "score": 85
+}
+            </pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><strong>id:</strong> The unique ID of the user (e.g., 123).</li>
+                <li><strong>level:</strong> The level name (e.g., "level 1").</li>
+                <li><strong>stage:</strong> The specific stage within the level (e.g., "Stage 1").</li>
+                <li><strong>score:</strong> The score to be updated (e.g., 85).</li>
+            </ul>
+        </section>
+
+        <section class="response">
+            <h2>Response</h2>
+            <p>The API will respond with a JSON object indicating the success or failure of the operation.</p>
+            <pre>
+{
+    "status": "success",
+    "message": "User score updated successfully."
+}
+            </pre>
+            <p><strong>Possible responses:</strong></p>
+            <ul>
+                <li><strong>status:</strong> "success" or "error".</li>
+                <li><strong>message:</strong> A message explaining the result of the request.</li>
+            </ul>
+        </section>
+
+        <section class="example">
+            <h2>PowerShell Example Command</h2>
+            <p>To make a request to the API, you can use the following PowerShell command:</p>
+            <pre>
+Invoke-RestMethod -Uri "http://localhost/project/math_test/update/beginning_level/add/" -Method Post -Body '{"id":123,"level":"level 1","stage":"Stage 1","score":85}' -ContentType "application/json"
+            </pre>
+        </section>
+    </div>
+</body>
+</html>
